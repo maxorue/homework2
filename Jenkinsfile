@@ -5,7 +5,7 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
-
+	
 	stages {
 	    
 	    stage('gitclone') {
@@ -14,7 +14,11 @@ pipeline{
 				git 'https://github.com/maxorue/homework2.git'
 			}
 		}
-
+	        stage ('Git Checkout') {
+  		        steps {
+                                git branch: 'main', url: 'https://dckr_pat_DJ8KljhaSSHhFZRLIITYY01Ny7M@github.com/maxorue/homework2.git'
+                         }
+                }
 		stage('Build') {
 
 			steps {
