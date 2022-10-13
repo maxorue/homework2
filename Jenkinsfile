@@ -14,6 +14,12 @@ pipeline{
 				git 'https://github.com/maxorue/homework2.git'
 			}
 		}
+		stage ('Git Checkout') {
+			
+  		        steps {
+                               git branch: 'main', url: 'https://github.com/maxorue/homework2.git'
+ 			}
+                }
 		stage('Build') {
 
 			steps {
